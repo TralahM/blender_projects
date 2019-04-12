@@ -141,7 +141,7 @@ show_cpu_core_lowram_notice = True # Default: True) [True or False]            #
 reserved_cpu_logical_cores = 2 # (Default: 0) [1 = safe mode]                  #  | "reserved_cpu_logical_cores" setting subtracts cores from the total available.
                                                                                #  | e.g. reserved_cpu_logical_cores = 3 (on a 8 core CPU) will limit the script to use only 5 of 8 cores.
 #----[ FORCE 1 BLENDER INSTANCE ] (!DISABLES MULTICORE FUNCTIONALITY!)         #  | When True, this disables multicore rendering, but it lets you use external
-force_one_instance_render = True # (Default: False) [True or False]           #  | FFmpeg with any of your blender projects. Including keyframed 3D Scenes
+force_one_instance_render = False # (Default: False) [True or False]           #  | FFmpeg with any of your blender projects. Including keyframed 3D Scenes
                                                                                #  | Basically, this let's you render any .blend file without the interface.
 #----[ SHOULD WE BYPASS WARNINGS WHEN ONLY 1 CPU CORE IS ENABLED? ]
 bypass_low_cpu_warnings = False # (Default: False) [True or False]             #  | True will hide warning prompts and auto-select script recommended settings.
@@ -167,8 +167,8 @@ post_finished_video = "-async 1" # [arg2]                                      #
 
 #----[ BLENDER AUDIO PCM MIXDOWN SETTINGS ]                                    #  | Note: Audio is exported separate from the video, using following settings.
 export_audio_accuracy = 1024 # (Default: 1024)                                 #  | Sample Accuracy - lower it is, the more accurate. (?)
-export_audio_format = "" # (Default: "") ["U8","S16","S24","S32","F32","F64"]  #  | Sample Format: 's16' works on all platforms but try 'S24' or 'S32'
-force_audio_mixrate = "" # (Default: "") ["44100","48000","96000","192000"]    #  | Mixrate (Audio Sample Rate) - 48kHz seems to be default for most recording devices.
+export_audio_format = "s32" # (Default: "") ["U8","S16","S24","S32","F32","F64"]  #  | Sample Format: 's16' works on all platforms but try 'S24' or 'S32'
+force_audio_mixrate = "48000" # (Default: "") ["44100","48000","96000","192000"]    #  | Mixrate (Audio Sample Rate) - 48kHz seems to be default for most recording devices.
                                                                                #  | Leave the force_audio_mixrate = "" to use the Blender's default setting.
 #----[ SHOULD WE USE FFMPEG'S RANGE OF BITRATES? ]
 use_ffmpeg_audio_bitrates = False # (Default: False) [True or False]           #  | True allows audio bitrates from 8kb/s to 640kb/s (Depending on codec limit)
@@ -199,7 +199,7 @@ the_scaler = "lanczos" # Default: "lanczos"                                    #
 bypass_huffyuv_and_raw_avi_warnings = False #(Default: False ) [True or False] #  | True will skip all warning prompts and render anyway.
 
 #----[ PERMIT A 3D SCENE STRIP IN VSE ] (Experimental/ Glitchy)                #  | Scene strips are unreliable when rendering with Multiple blender instances
-permit_scene_strips = False #(Default: False) [True or False]                  #  | that have keyframed viewport objects. Instead, Render out keyframed
+permit_scene_strips = True #(Default: False) [True or False]                  #  | that have keyframed viewport objects. Instead, Render out keyframed
                                                                                #  | objects as an image sequence, import them into VSE, then use this script.
   #------------------------------------------------------------------#
 #>#-----------------[ .BLEND OVERRIDE FILE CONTENTS ]----------------#---------#  | This is a great place to put common settings that you somtimes forget
@@ -312,7 +312,7 @@ full_root_filepath = os.path.dirname(bpy.data.filepath) + slash
 working_dir_temp = "Script_Working_Folder"
 av_src_dir = "AV_Source"
 other_files_dir = "Other_Files"                                                #  | Look at "render." file in this folder to see the "secret sauce."
-img_sequence_dir = "IMG_Sequence"
+img_sequence_dir = os.path.basename(assumed_blend_filename)
 
 #----[ GIVE TEMP FILES NAMES ]
 wav_filename = "Full_Audio"
