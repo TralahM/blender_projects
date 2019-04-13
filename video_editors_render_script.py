@@ -312,7 +312,7 @@ full_root_filepath = os.path.dirname(bpy.data.filepath) + slash
 working_dir_temp = "Script_Working_Folder"
 av_src_dir = "AV_Source"
 other_files_dir = "Other_Files"                                                #  | Look at "render." file in this folder to see the "secret sauce."
-img_sequence_dir = os.path.basename(assumed_blend_filename)
+img_sequence_dir ="IMG_Sequence"
 
 #----[ GIVE TEMP FILES NAMES ]
 wav_filename = "Full_Audio"
