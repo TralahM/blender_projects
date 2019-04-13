@@ -109,7 +109,7 @@ elif my_platform == "Darwin": # APPLE OSX PATHS BELOW
 elif my_platform == "Linux": # GNU/LINUX PATHS BELOW
     blender_path = "/usr/bin/blender"                                                   #  |  Set to path of blender
     path_to_ffmpeg = "/usr/bin/ffmpeg"                                                  #  |  Set to path of ffmpeg
-    assumed_blend_filename = "agizafinale.blend"                                         #  |  Save as... "1.blend" (Script looks for 1.blend file in directory.)
+    assumed_blend_filename = "agiza.blend"                                         #  |  Save as... "1.blend" (Script looks for 1.blend file in directory.)
     click_me = "Linux_Click_to_Render.sh"                                      #  |  Created Clickable Render File
     terminal_cmd = "gnome-terminal -e"                                         #  |  Terminals: gnome-terminal -e, konsole -e, xterm -e, guake -e, terminator -e
 
@@ -167,7 +167,7 @@ post_finished_video = "-async 1" # [arg2]                                      #
 
 #----[ BLENDER AUDIO PCM MIXDOWN SETTINGS ]                                    #  | Note: Audio is exported separate from the video, using following settings.
 export_audio_accuracy = 1024 # (Default: 1024)                                 #  | Sample Accuracy - lower it is, the more accurate. (?)
-export_audio_format = "s32" # (Default: "") ["U8","S16","S24","S32","F32","F64"]  #  | Sample Format: 's16' works on all platforms but try 'S24' or 'S32'
+export_audio_format = "S32" # (Default: "") ["U8","S16","S24","S32","F32","F64"]  #  | Sample Format: 's16' works on all platforms but try 'S24' or 'S32'
 force_audio_mixrate = "48000" # (Default: "") ["44100","48000","96000","192000"]    #  | Mixrate (Audio Sample Rate) - 48kHz seems to be default for most recording devices.
                                                                                #  | Leave the force_audio_mixrate = "" to use the Blender's default setting.
 #----[ SHOULD WE USE FFMPEG'S RANGE OF BITRATES? ]
