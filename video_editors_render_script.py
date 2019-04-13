@@ -199,7 +199,7 @@ the_scaler = "lanczos" # Default: "lanczos"                                    #
 bypass_huffyuv_and_raw_avi_warnings = False #(Default: False ) [True or False] #  | True will skip all warning prompts and render anyway.
 
 #----[ PERMIT A 3D SCENE STRIP IN VSE ] (Experimental/ Glitchy)                #  | Scene strips are unreliable when rendering with Multiple blender instances
-permit_scene_strips = True #(Default: False) [True or False]                  #  | that have keyframed viewport objects. Instead, Render out keyframed
+permit_scene_strips = False #(Default: False) [True or False]                  #  | that have keyframed viewport objects. Instead, Render out keyframed
                                                                                #  | objects as an image sequence, import them into VSE, then use this script.
   #------------------------------------------------------------------#
 #>#-----------------[ .BLEND OVERRIDE FILE CONTENTS ]----------------#---------#  | This is a great place to put common settings that you somtimes forget
