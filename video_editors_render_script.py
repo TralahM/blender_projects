@@ -109,7 +109,7 @@ elif my_platform == "Darwin": # APPLE OSX PATHS BELOW
 elif my_platform == "Linux": # GNU/LINUX PATHS BELOW
     blender_path = "/usr/bin/blender"                                                   #  |  Set to path of blender
     path_to_ffmpeg = "/usr/bin/ffmpeg"                                                  #  |  Set to path of ffmpeg
-    assumed_blend_filename = "Eclipse.blend"                                         #  |  Save as... "1.blend" (Script looks for 1.blend file in directory.)
+    assumed_blend_filename = "Liquispark.blend"                                         #  |  Save as... "1.blend" (Script looks for 1.blend file in directory.)
     click_me = "Linux_Click_to_Render.sh"                                      #  |  Created Clickable Render File
     terminal_cmd = "gnome-terminal -e"                                         #  |  Terminals: gnome-terminal -e, konsole -e, xterm -e, guake -e, terminator -e
 
