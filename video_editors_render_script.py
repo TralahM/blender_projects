@@ -138,7 +138,7 @@ show_cpu_core_lowram_notice = True # Default: True) [True or False]            #
 #--------------------------------------------------------------------#
 
 #----[ NUMBER OF LOGICAL CPU CORES RESERVED TO RUN OPERATING SYSTEM ]          #  | [0 = use all cores] (Each used core creates 1 additional instance of blender. 1.6GB to 3GB RAM/Core is required)
-reserved_cpu_logical_cores = 2 # (Default: 0) [1 = safe mode]                  #  | "reserved_cpu_logical_cores" setting subtracts cores from the total available.
+reserved_cpu_logical_cores = 3 # (Default: 0) [1 = safe mode]                  #  | "reserved_cpu_logical_cores" setting subtracts cores from the total available.
                                                                                #  | e.g. reserved_cpu_logical_cores = 3 (on a 8 core CPU) will limit the script to use only 5 of 8 cores.
 #----[ FORCE 1 BLENDER INSTANCE ] (!DISABLES MULTICORE FUNCTIONALITY!)         #  | When True, this disables multicore rendering, but it lets you use external
 force_one_instance_render = False # (Default: False) [True or False]           #  | FFmpeg with any of your blender projects. Including keyframed 3D Scenes
